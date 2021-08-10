@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="shortcut icon" href="./Images/LCA-Icon.png" type="image" />
+    <link rel="stylesheet" href="./Styles/register.css">
+</head>
+<body>
+    <form action="https://lca-pointofsales.herokuapp.com//register"
+    method="POST"
+    id="register">
+    <div class="register-container section">
+        <div class="heading">
+            <img src="./Images/Lifechoices-300x91.jpg" alt="LCA Logo">
+            <h1>Register Your Account</h1>
+        </div>
+        <div class="form-group">
+            <label for="first_name" class="header" class="form-label">Your First Name</label>
+            <input type="text" name="first_name" id="first_name" required placeholder="John" class="form-input">
+        </div>
+        <div class="form-group">
+            <label for="last_name" class="header" class="form-label"> Your Last Name</label>
+            <input type="text" name="last_name" id="last_name" required placeholder="Doe" class="form-input">
+        </div>
+        <div class="form-group">
+            <label for="email" class="header" class="form-label">Your Email</label>
+            <input type="email" name="email" id="email" required placeholder="example@mail.com" class="form-input">
+        </div>
+        <div class="form-group">
+            <label for="cell_num" class="header" class="form-label">Your Cell Number</label>
+            <input type="tel" name="cell_num" id="cell_num" required placeholder="083 555 1616" min="10" max="10" class="form-input">
+        </div>
+        <div class="form-group">
+            <label for="password" class="header" class="form-label">Your Password</label>
+            <input type="password" name="password" id="password" required placeholder="******" class="form-input">
+        </div>
+        <button class="button">Register</button>
+    </div>
+    </form>
+</body>
+</html>
