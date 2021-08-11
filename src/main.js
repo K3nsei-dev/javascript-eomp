@@ -22,6 +22,10 @@ fetch('https://lca-pointofsales.herokuapp.com//auth', {
         myStorage.setItem('jwt-token', res['access_token'])
         console.log('Successful')
     })
+
+    if (res['message'] == "Success") {
+        window.location.href = "./user.html"
+    }
 }
 
 let base_URL = "https://lca-pointofsales.herokuapp.com//view-products";
@@ -46,22 +50,24 @@ function getProducts(url) {
           <div class='productCategory'>${product[2]}</div>
           <div class='productPrice'>R${product[3]}</div>
           <div>${product[4]}</div><div>
-          <button class="btn">Add To Cart</button>`
+          <button class="btn">Add To Cart</button> <input type="number" id="quantity" name="quantity" min="1" max="5">`
       });
     });
 }
 
 getProducts(base_URL);
 
-// // getting user profile
-// fetch('https://lca-pointofsales.herokuapp.com/user-profile/{user_id}', {
-//     method: 'GET',
-//     headers: {
-//         'Content-Type': 'application/json',
-//         'Authorization': `jwt ${myStorage}`
-//     },
-//     mode: 'cors',
-// }).then(res => res.json)
-//     .then(res => {
-//         console.log(res)
-//     })
+// getting user profile
+const user_id = product.data[0]
+console.log(user_id)
+fetch('https://lca-pointofsales.herokuapp.com/user-profile/{user_id}', {
+    method: 'GET',
+    headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `jwt ${myStorage}`
+    },
+    mode: 'cors',
+}).then(res => res.json)
+    .then(res => {
+        console.log(res)
+    })
