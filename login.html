@@ -4,35 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LC Point Of Sale</title>
+    <title>Login</title>
     <link rel="shortcut icon" href="./Images/LCA-Icon.png" type="image" />
     <link rel="stylesheet" href="./Styles/login.css">
 </head>
 <body>
-    <form action="https://lca-pointofsales.herokuapp.com//auth" 
-    method="POST"
-    id="form-container">
-    <div class="login-container section">
-        <div class="heading">
-            <img src="./Images/Lifechoices-300x91.jpg" alt="LCA Logo">
-            <h1>Welcome,</h1>
-            <span><h2>to LC Point of Sales!</h2></span>
+    <form id="form-container">
+        <div class="login-container section">
+            <div class="heading">
+                <img src="./Images/Lifechoices-300x91.jpg" alt="LCA Logo">
+                <h1>Welcome,</h1>
+                <span><h2>to LC Point of Sales!</h2></span>
+            </div>
+            <div class="form-group">
+                <label for="email" class="header" class="form-label">Your Email Address</label>
+                <input type="text" name="email" id="email-input" class="form-input" required placeholder="example@mail.com">
+            </div>
+            <div class="form-group">
+                <label for="password" class="header" class="form-label">Your Password</label>
+                <input type="password" name="password" id="password-input" required placeholder="******" class="form-input">
+            </div>
+            <button type="submit" class="button" onclick="login(), event.preventDefault()" id="js-button">Login</button>
+            <div class="register">
+                <p>Don't have an account? Register Today!</p>
+                <a href="./register.html">Register Your Account</a>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="email" class="header" class="form-label">Your Email Address</label>
-            <input type="text" name="email" id="email-input" class="form-input" required placeholder="example@mail.com">
-        </div>
-        <div class="form-group">
-            <label for="password" class="header" class="form-label">Your Password</label>
-            <input type="password" name="password" id="password-input" required placeholder="******" class="form-input">
-        </div>
-        <button type="submit" class="button">Login</button>
-        <div class="register">
-            <p>Don't have an account? Register Today!</p>
-            <a href="./register.html">Register Your Account</a>
-        </div>
-    </div>
-</form>
-    <script src="./main.js"></script>
+    </form>
+        <script src="./src/main.js"></script>
 </body>
 </html>
