@@ -127,3 +127,17 @@ body {
     width: 30%;
     margin: 10px;
 }
+
+.productDescription {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

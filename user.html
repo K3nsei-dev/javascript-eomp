@@ -6,20 +6,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Profile</title>
     <link rel="shortcut icon" href="./Images/LCA-Icon.png" type="image" />
+    <link rel="stylesheet" href="./Styles/user.css">
+    <!-- font awesome plugin -->
+    <script src="https://kit.fontawesome.com/3285114a98.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div id="add-product">
-        <form>
+    <nav class="nav-bar">
+        <a href="./home.html">Home</a>
+        <a href="../login.html">Login</a>
+        <a href="../register.html">Sign Up</a>
+        <a href="../view-products.html">Products</a>
+    </nav>
+    <div class="user-info"></div>
+    <form id="form-container">
+        <div class="heading">
+            <h1>Add A Product</h1>
+        </div>
+            <div class="add-products">
             <div class="form-group">
                 <label for="product_name" class="header" class="form-label">Product Name</label>
-                <input type="text" name="product_name" id="p_name" required placeholder="Product Name">
+                <input class="form-input" type="text" name="product_name" id="p_name" required placeholder="Product Name">
             </div>
-            <div class="form-group"></div>
-            <div class="form-group"></div>
-            <div class="form-group"></div>
-            <div class="form-group"></div>
+            <div class="form-group">
+                <label for="product_type" class="header" class="form-label">Product Type</label>
+                <input class="form-input" type="text" name="product_type" id="p_type" required placeholder="Product Type">
+            </div>
+            <div class="form-group">
+                <label for="product_price" class="header" class="form-label">Product Price</label>
+                <input class="form-input" type="number/text" name="product_price" id="p_price" required placeholder="Product Price">
+            </div>
+            <div class="form-group">
+                <label for="product_description" class="header" class="form-label">Product Description</label>
+                <input class="form-input" type="text" name="product_description" id="p_description" required placeholder="Product Description">
+            </div>
+            <div class="form-group">
+                <label for="product_image" class="header" class="form-label">Product Image</label>
+                <input class="form-input" type="file" name="product_image" id="p_image" required>
+            </div>
+            <button type="submit" onclick="addProducts()" class="button">submit</button>
+        </div>
         </form>
-    </div>
+        <form id="form-container">
+            <div class="heading">
+                <h1>Edit Existing Product</h1>
+            </div>
+                <div class="add-products">
+                <div class="form-group">
+                    <label for="product_name" class="header" class="form-label">Product Name</label>
+                    <input class="form-input" type="text" name="product_name" id="p_name" required placeholder="Product Name">
+                </div>
+                <div class="form-group">
+                    <label for="product_type" class="header" class="form-label">Product Type</label>
+                    <input class="form-input" type="text" name="product_type" id="p_type" required placeholder="Product Type">
+                </div>
+                <div class="form-group">
+                    <label for="product_price" class="header" class="form-label">Product Price</label>
+                    <input class="form-input" type="number/text" name="product_price" id="p_price" required placeholder="Product Price">
+                </div>
+                <div class="form-group">
+                    <label for="product_description" class="header" class="form-label">Product Description</label>
+                    <input class="form-input" type="text" name="product_description" id="p_description" required placeholder="Product Description">
+                </div>
+                <div class="form-group">
+                    <label for="product_image" class="header" class="form-label">Product Image</label>
+                    <input class="form-input" type="file" name="product_image" id="p_image" required>
+                </div>
+                <button type="submit" onclick="updateProducts()" class="button">submit</button>
+            </div>
+            </form>
+        <footer class="footer">
+            <div class="cc-container">
+                <div class="cc-icon">
+                    <a href=""><i class="far fa-copyright"></i></a>
+                    <p>Life Choices Academy</p>
+                </div>
+                <div class="social-icon">
+                    <a href="https://www.facebook.com/LifeChoicesZA" target="_blank"><i class="fab fa-facebook-square"></i></a>
+                    <a href="https://www.instagram.com/lifechoicesza/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/school/lifechoices-coding-academy/" target="_blank"><i class="fab fa-linkedin" target="_blank"></i></a>
+                </div>
+            </div>
+        </footer>
     <script src="./src/main.js"></script>
 </body>
 </html>
