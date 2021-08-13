@@ -142,3 +142,9 @@ body {
     border: 2px solid #abcc37;
     transition: all 0.3s linear;
 }
+
+.container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
