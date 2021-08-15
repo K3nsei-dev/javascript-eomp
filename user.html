@@ -17,69 +17,7 @@
         <a href="../register.html">Sign Up</a>
         <a href="../view-products.html">Products</a>
     </nav>
-    <div class="container">
-        <form id="form-container" method="POST">
-            <div class="heading">
-                <h1>Add A Product</h1>
-            </div>
-                <div class="add-products">
-                <div class="form-group">
-                    <label for="product_name" class="header" class="form-label">Product Name</label>
-                    <input class="form-input" type="text" name="product_name" id="p_name" required placeholder="Product Name">
-                </div>
-                <div class="form-group">
-                    <label for="product_type" class="header" class="form-label">Product Type</label>
-                    <input class="form-input" type="text" name="product_type" id="p_type" required placeholder="Product Type">
-                </div>
-                <div class="form-group">
-                    <label for="product_price" class="header" class="form-label">Product Price</label>
-                    <input class="form-input" type="number" name="product_price" id="p_price" required placeholder="Product Price">
-                </div>
-                <div class="form-group">
-                    <label for="product_description" class="header" class="form-label">Product Description</label>
-                    <input class="form-input" type="text" name="product_description" id="p_description" required placeholder="Product Description">
-                </div>
-                <div class="form-group">
-                    <label for="product_image" class="header" class="form-label">Product Image</label>
-                    <input class="form-input" type="file" name="product_image" id="p_image" required onchange="addImage()">
-                    <img src="" alt="Image Preview" class="imgurl">
-                </div>
-                <button type="submit" class="button" onclick="addProducts(), event.preventDefault()">submit</button>
-            </div>
-            </form>
-            <form id="form-container" method=POST enctype=multipart/form-data>
-                <div class="heading">
-                    <h1>Edit Existing Product</h1>
-                </div>
-                    <div class="add-products">
-                        <div class="form-group">
-                            <label for="product_id" class="header" class="form-label">Product ID</label>
-                            <input type="number/text" class="form-input" name="product_id" id="p_id" required placeholder="Product ID">
-                        </div>
-                    <div class="form-group">
-                        <label for="product_name" class="header" class="form-label">Product Name</label>
-                        <input class="form-input" type="text" name="product_name" id="p_name" required placeholder="Product Name">
-                    </div>
-                    <div class="form-group">
-                        <label for="product_type" class="header" class="form-label">Product Type</label>
-                        <input class="form-input" type="text" name="product_type" id="p_type" required placeholder="Product Type">
-                    </div>
-                    <div class="form-group">
-                        <label for="product_price" class="header" class="form-label">Product Price</label>
-                        <input class="form-input" type="number/text" name="product_price" id="p_price" required placeholder="Product Price">
-                    </div>
-                    <div class="form-group">
-                        <label for="product_description" class="header" class="form-label">Product Description</label>
-                        <input class="form-input" type="text" name="product_description" id="p_description" required placeholder="Product Description">
-                    </div>
-                    <div class="form-group">
-                        <label for="product_image" class="header" class="form-label">Product Image</label>
-                        <input class="form-input" type="file" name="product_image" id="p_image" required onchange="addImage()">
-                        <img src="" alt="Image Preview">
-                    </div>
-                    <button type="submit" onclick="updateProducts(), event.preventDefault()" class="button">submit</button>
-                </div>
-                </form>
+    <div id="user-container">
     </div>
         <footer class="footer">
             <div class="cc-container">

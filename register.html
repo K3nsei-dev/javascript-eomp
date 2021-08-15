@@ -17,7 +17,7 @@
         <a href="../register.html">Sign Up</a>
         <a href="../view-products.html">Products</a>
     </nav>
-    <form action="https://lca-pointofsales.herokuapp.com//register"
+    <form enctype="multipart/form-data"
     method="POST"
     id="register">
     <div class="register-container section">
@@ -45,7 +45,7 @@
             <label for="password" class="header" class="form-label">Your Password</label>
             <input type="password" name="password" id="password" required placeholder="******" class="form-input">
         </div>
-        <button class="button">Register</button>
+        <button class="button" onclick="registerUser(), event.preventDefault()">Register</button>
     </div>
     </form>
     <footer class="footer">
@@ -61,5 +61,6 @@
             </div>
         </div>
     </footer>
+    <script src="./src/register.js"></script>
 </body>
 </html>

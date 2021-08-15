@@ -19,10 +19,13 @@ fetch('https://lca-pointofsales.herokuapp.com//auth', {
     .then(res => {
         console.log(res);
         console.log(res['access_token'])
-        myStorage.setItem('jwt-token', res['access_token'])
-        console.log('Successful')
         
-        if (res['access_token'] == res['access_token']) {
+        if (res['description'] == 'Invalid credentials') {
+            alert('Incorrect username/password')
+        } else {
+            myStorage.setItem('jwt-token', res['access_token'])
+            console.log('Successful')
+            alert('You have successfully logged in')
             window.location.href = "./user.html"
         }
     })
