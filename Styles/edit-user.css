@@ -1,0 +1,30 @@
+.header {
+    /* display: none; */
+}
+
+.form-label {
+    display: flex;
+}
+
+#form-container {
+    padding: 50px;
+    border-radius: 30px;
+    background-color: white;
+    box-shadow: 5px 5px 5px black;
+}
+
+.heading h1 {
+    text-transform: uppercase;
+    margin: 10px;
+}
+
+.form-container {
+    display: flex;
+}
+
+.form-input {
+    border-radius: 50px;
+    padding: 20px;
+    text-align: center;
+    font-size: 15px;
+ }

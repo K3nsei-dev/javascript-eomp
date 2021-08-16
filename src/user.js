@@ -7,7 +7,9 @@ function getID() {
         // console.log(data)
         // id.setItem()
 
-        let userID = data.data[0]
+        let userID = data.data;
+
+        console.log(userID)
 
         id.setItem('id', userID)
     })
@@ -16,7 +18,13 @@ function getID() {
 getID()
 
 function userInfo() {
-    fetch('https://lca-pointofsales.herokuapp.com//user-profile/' + `${ id.getItem('id') }`)
+    fetch('https://lca-pointofsales.herokuapp.com//user-profile/' + `${ id.getItem('id') }`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `jwt ${ localStorage.getItem('jwt-token') }`
+        }
+    })
         .then(res => res.json()).then(data => {
             // console.log(data)
 

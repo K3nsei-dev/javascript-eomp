@@ -2,12 +2,21 @@
 function updateProducts() {
     const productID = document.getElementById('u_id').value;
     const name = document.getElementById('u_name').value;
-    const type = document.getElementById('u_type').value;
+    const pType = document.getElementById('u_type').value;
     const price = document.getElementById('u_price').value;
     const description = document.getElementById('u_description').value;
     const image = document.querySelector('.imgurl').src;
 
-    console.log(name, type, price, description, image, productID)
+    // console.log(name, type, price, description, image, productID)
+
+    // if (typeof(name) === "number" ||
+    // typeof(pType) === "number") {
+    //     return alert('Please Use Correct Value for Each Section')
+    // }
+
+    // if (productID.length() == 0) {
+    //     return alert('please fill in each section')
+    // }
 
     fetch('https://lca-pointofsales.herokuapp.com/update-products/' + `${ productID }`, {
         method: 'PUT',
@@ -16,7 +25,7 @@ function updateProducts() {
         },
         body: JSON.stringify({
             product_name: name,
-            product_type: type,
+            product_type: pType,
             product_price: price,
             product_description: description,
             product_image: image

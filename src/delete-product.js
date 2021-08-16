@@ -1,6 +1,11 @@
 function deleteProduct() {
     const productID = document.getElementById('id').value;
     console.log(productID)
+
+    if (typeof(productID) === "string") {
+        return alert('Please Use Correct Values for Each Section')
+    }
+
     fetch('https://lca-pointofsales.herokuapp.com//delete-product/' + `${ productID }`, {
         method: 'POST',
     }).then(res => res.json()).then(data => {

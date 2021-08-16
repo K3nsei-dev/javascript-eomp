@@ -5,8 +5,16 @@ function registerUser() {
     const cell = document.getElementById('cell_num').value;
     const password = document.getElementById('password').value;
 
-    console.log(name, surname, email, cell, password)
-
+    // console.log(name, surname, email, cell, password)
+    try {
+        if (typeof(name) === "number" || 
+        typeof(surname) === "number" || 
+        typeof(cell) === "string") {
+            throw ('Please use the correct values for each section!');
+        }
+    } catch (e) {
+        alert("Error: " + e)
+    } finally {
     fetch('https://lca-pointofsales.herokuapp.com//register', {
         method: 'POST',
         headers: {
@@ -30,4 +38,16 @@ function registerUser() {
             alert('Please FIll In The Required Fields Correctly')
         }
     })
+    }
 }
+
+// try {
+//     if (typeof name !== 'string' && typeof surname !== 'string' && typeof cell !== 'number') {
+//       throw (new Error('An incorrect value was entered in one of the fields.'));
+//     } else {
+//       // Do something here if the above conditional passes.
+//     }
+//   } 
+//   catch (e) {
+//     console.error(e.message);
+//   }

@@ -7,43 +7,59 @@
     <title>User Profile</title>
     <link rel="shortcut icon" href="./Images/LCA-Icon.png" type="image" />
     <link rel="stylesheet" href="./Styles/user.css">
+    <!-- <link rel="stylesheet" href="./Styles/edit-user.css"> -->
     <!-- font awesome plugin -->
     <script src="https://kit.fontawesome.com/3285114a98.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <nav class="nav-bar">
         <a href="./home.html">Home</a>
-        <a href="../login.html">Login</a>
-        <a href="../register.html">Sign Up</a>
-        <a href="../view-products.html">Products</a>
         <a href="./products.html">Edit Products</a>
-        <button id="logout">Logout</button>
+        <a href="../view-products.html">Products</a>
+        <button id="logout"><i class="fas fa-sign-out-alt"></i></button>
     </nav>
     <div class="container">
     <div id="user-container">
     </div>
-    <form enctype="multipart/form-data" method="POST">
+    <form id="form-container" enctype="multipart/form-data" method="POST">
+    <div class="heading">
+        <h1>Edit User Details</h1>
+    </div>
+    <div class="user">
         <div class="form-group">
             <label for="first_name" class="header" class="form-label">First Name</label>
-            <input type="text" name="first_name" id="first_name" required placeholder="John">
+            <input type="text" name="first_name" id="first_name" required placeholder="John" class="form-input">
         </div>
         <div class="form-group">
             <label for="last_name" class="header" class="form-label">Last Name</label>
-            <input type="text" name="last_name" id="last_name" required placeholder="Doe">
+            <input type="text" name="last_name" id="last_name" required placeholder="Doe" class="form-input">
         </div>
         <div class="form-group">
             <label for="email" class="header" class="form-label">Email</label>
-            <input type="email" name="email" id="email" required placeholder="example@mail.com">
+            <input type="email" name="email" id="email" required placeholder="example@mail.com" class="form-input">
         </div>
         <div class="form-group">
             <label for="cell_num" class="header" class="form-label">Cell Number</label>
-            <input type="tel" name="cell_num" id="cell_num" required placeholder="083 555 1221">
+            <input type="tel" name="cell_num" id="cell_num" required placeholder="083 555 1221" class="form-input">
         </div>
         <div class="form-group">
             <label for="password" class="header" class="form-label">Password</label>
-            <input type="password" name="password" id="password" required placeholder="******">
+            <input type="password" name="password" id="password" required placeholder="******" class="form-input">
         </div>
-        <button onclick="editUser(), event.preventDefault()">Edit</button>
+        <button class="button" onclick="editUser(), event.preventDefault()">Edit</button>
+    </div>
+    </form>
+    <form method="POST" enctype="multipart/form-data" id="container">
+        <div class="heading">
+            <h1>Delete User</h1>
+        </div>
+        <div class="user">
+    <div class="form-group">
+            <label for="product_id" class="header">Product ID</label>
+            <input type="number" name="product_id" id="id" class="form-input">
+        </div>
+        <button class="button" id="btn" onclick="deleteUser(), event.preventDefault()">Delete</button>
+    </div>
     </form>
 </div>
         <footer class="footer">

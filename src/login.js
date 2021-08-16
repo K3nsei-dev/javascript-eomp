@@ -32,12 +32,3 @@ fetch('https://lca-pointofsales.herokuapp.com//auth', {
         }
     })
 }
-
-// function getID() {
-//     fetch('https://lca-pointofsales.herokuapp.com//user-data/' + `${ userID.getItem('userID') }`, {
-//         method: 'GET',
-//         headers: {
-//             'Content-Type': 'application/json'
-//         }
-//     })
-// }

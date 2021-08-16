@@ -5,9 +5,15 @@ function editUser() {
     const cellNum = document.getElementById('cell_num').value;
     const passwordInput = document.getElementById('password').value;
 
-    console.log(name, surname, emailInput, cellNum, passwordInput)
+    // console.log(name, surname, emailInput, cellNum, passwordInput)
 
-    fetch('lca-pointofsales.herokuapp.com/' + `${ localStorage.getItem('id') }`, {
+    if (typeof(name) === "number" ||
+    typeof(surname) === "number" ||
+    typeof(cellNum) === "string") {
+        return alert('Please use correct value for each section')
+    }
+
+    fetch('https://lca-pointofsales.herokuapp.com//edit-user/' + `${ localStorage.getItem('id') }`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'

@@ -21,19 +21,20 @@ body {
     justify-content: flex-end;
     align-items: center;
     padding: 20px;
+    width: 100%;
 }
 
 .nav-bar a {
     text-decoration: none;
-    color: white;
+    color: black;
     text-transform: uppercase;
     font-weight: bold;
+    padding: 10px;
 }
 
 .nav-bar a:hover {
-    background-color: white;
-    color: black;
-    padding: 10px;
+    background-color: black;
+    color: white;
     transition: all 0.3s linear;
 }
 
@@ -43,11 +44,11 @@ body {
     /* background-color: #08030a; */
     width: 100%;
     padding: 20px;
-    color: white;
+    color: black;
 }
 
 .fa-copyright {
-    color: white;
+    color: black;
     font-size: 20px;
 }
 
@@ -73,15 +74,15 @@ body {
 }
 
 .social-icon a {
-    color: white;
+    color: black;
     font-size: 20px;
     text-decoration: none;
+    padding: 10px;
 }
 
 .social-icon a:hover {
     background-color: white;
     color: black;
-    padding: 10px;
     transition: all 0.3s linear;
 }
 
@@ -140,4 +141,20 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#logout {
+    text-transform: uppercase;
+    padding: 10px;
+    border: none;
+    background-color: rgb(0, 0, 0, 0);
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#logout:hover {
+    background-color: white;
+    color: black;
+    transition: all 0.3s linear;
 }
