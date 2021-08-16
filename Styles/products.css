@@ -151,31 +151,3 @@ body {
     gap: 20px;
     flex-wrap: wrap;
 }
-
-#logout {
-    text-transform: uppercase;
-    padding: 10px;
-    border: none;
-    background-color: rgb(0, 0, 0, 0);
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-#logout:hover {
-    background-color: white;
-    color: black;
-    transition: all 0.3s linear;
-}
-
-#user-container {
-    background-color: white;
-    padding: 100px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    gap: 20px;
-    box-shadow: 5px 5px 5px black;
-}

@@ -1,5 +1,6 @@
 // assigning variable to local storage
 const myStorage = window.localStorage;
+const userID = window.localStorage;
 
 // login function
 function login() {
@@ -24,6 +25,7 @@ fetch('https://lca-pointofsales.herokuapp.com//auth', {
             alert('Incorrect username/password')
         } else {
             myStorage.setItem('jwt-token', res['access_token'])
+            userID.setItem('userID', username)
             console.log('Successful')
             alert('You have successfully logged in')
             window.location.href = "./user.html"
@@ -31,3 +33,11 @@ fetch('https://lca-pointofsales.herokuapp.com//auth', {
     })
 }
 
+// function getID() {
+//     fetch('https://lca-pointofsales.herokuapp.com//user-data/' + `${ userID.getItem('userID') }`, {
+//         method: 'GET',
+//         headers: {
+//             'Content-Type': 'application/json'
+//         }
+//     })
+// }
