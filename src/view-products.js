@@ -69,10 +69,10 @@ function createCart(cartItems) {
       let product = cartProduct.data.find((item) => {
         return item[0] == id;
       });
-      
-      console.log(product)
+
+      // console.log(product)
       cart.pop(product);
-      console.log(cart)
+      // console.log(cart)
     
       let lesserPrice = cartItems.reduce((total, item) => total - item[3], 0)
       

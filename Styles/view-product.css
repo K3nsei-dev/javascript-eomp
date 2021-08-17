@@ -170,7 +170,7 @@ body {
 }
 
 #cart {
-    /* min-height: 100vh; */
+    min-height: 100vh;
     min-width: 100vw;
     display: none;
     flex-wrap: wrap;
