@@ -17,12 +17,21 @@
         <a href="./user.html">Edit User</a>
         <button id="logout"><i class="fas fa-sign-out-alt"></i></button>
     </nav>
-    <h1>Products</h1>
+    <div class="heading">
+        <h1>Products</h1>
+    </div>
+    <div id="cart" class="active">You Have No Items In Cart</div>
+    <button id="cart-modal" onclick="toggleCart(), event.preventDefault()">Cart</button>
     <div id="filter">
-        <form onsubmit="event.preventDefault(); searchProducts()">
+        <form>
             <input type="text" name="search" id="searchTerm" required>
-            <button type="submit">Search</button>
+            <button type="submit" onclick="searchProducts(), event.preventDefault()">Search</button>
         </form>
+        <button onclick="sortAscending(), event.preventDefault()">Ascending Order</button>
+        <button onclick="sortDescending(), event.preventDefault()">Descending Order</button>
+        <button onclick="sortPriceAscending(), event.preventDefault()">High Price</button>
+        <button onclick="sortPriceDescending(), event.preventDefault()">Low Price</button>
+        <button onclick="clearFilter(), event.preventDefault()">Clear Filters</button>
     </div>
     <div id="view-products"></div>
     <footer class="footer">
