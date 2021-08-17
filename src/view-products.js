@@ -155,3 +155,12 @@ function clearFilter() {
 function toggleCart() {
   document.querySelector('#cart').classList.toggle('active');
 }
+
+function showMask() {
+  let node = document.getElementById('cart-modal');
+  if (node.style.visibility=='visible') {
+      node.style.visibility = 'hidden';
+  }
+  else
+      node.style.visibility = 'visible'
+}
