@@ -17,6 +17,13 @@
         <a href="./user.html">Edit User</a>
         <button id="logout"><i class="fas fa-sign-out-alt"></i></button>
     </nav>
+    <h1>Products</h1>
+    <div id="filter">
+        <form onsubmit="event.preventDefault(); searchProducts()">
+            <input type="text" name="search" id="searchTerm" required>
+            <button type="submit">Search</button>
+        </form>
+    </div>
     <div id="view-products"></div>
     <footer class="footer">
         <div class="cc-container">
@@ -33,5 +40,6 @@
     </footer>
     <script src="./src/view-products.js"></script>
     <script src="./src/logout.js"></script>
+    <script src="./src/cart.js"></script>
 </body>
 </html>
