@@ -43,12 +43,12 @@ function renderProducts(products) {
 }
 
 function createCart(cartItems) {
-  let container = document.querySelector('#cart');
+  let container = document.querySelector("#cart");
 
   container.innerHTML = "";
 
   if (cartItems.length > 0) {
-    cartItems.map(cartItem => {
+    cartItems.map((cartItem) => {
       container.innerHTML += `<div class='products-container'>
       <img src='${cartItem[5]}' class='productImage'></img>
       <div class="productID">Product ID: ${cartItem[0]}</div>
@@ -57,29 +57,36 @@ function createCart(cartItems) {
       <div class='productPrice'>Price: R${cartItem[3]}</div>
       <div class="productDescription"><p>Product Description:</p> ${cartItem[4]}</div>
       <button id="remove-item">Remove Item</button></div>`;
-    })
-    
-    let accumulatedPrice = cartItems.reduce((total, item) => total + item[3], 0)
-    
-    container.innerHTML += `<h2>Total Price:</h2> ${ accumulatedPrice }`
+    });
 
-    let remove = document.getElementById('remove-item')
+    let accumulatedPrice = cartItems.reduce(
+      (total, item) => total + item[3],
+      0
+    );
 
-    remove.addEventListener('click', (id) => {
-      let product = cartProduct.data.find((item) => {
+    container.innerHTML += `<h2>Total Price:</h2> ${accumulatedPrice}`;
+
+    let remove = document.getElementById("remove-item");
+
+    remove.addEventListener("click", (id) => {
+      // console.log(product)
+      let product = cart.filter((item) => {
+        console.log(item);
         return item[0] == id;
       });
 
-      // console.log(product)
-      cart.pop(product);
-      // console.log(cart)
-    
-      let lesserPrice = cartItems.reduce((total, item) => total - item[3], 0)
-      
-      container.innerHTML = '';
-      
-      container.innerHTML += `<h2>Total Price:</h2> ${ lesserPrice }`
-    })
+      console.log(product);
+      cart.splice(product, 1);
+      console.log(cart);
+      // console.log(cart);
+
+      let lesserPrice = cartItems.reduce((total, item) => total - item[3], 0);
+
+      container.innerHTML = "";
+
+      container.innerHTML += `<h2>Total Price:</h2> ${lesserPrice}`;
+    });
+    console.log(remove);
   } else {
     container.innerHTML = "<h2>No Items In Cart</h2>";
   }
@@ -93,29 +100,29 @@ function addProduct(id) {
   cart.push(product);
   console.log(cart);
   // console.log("hello");
-  createCart(cart)
+  createCart(cart);
 }
 
 function searchProducts() {
-  let searchTerm = document.querySelector('#searchTerm').value;
+  let searchTerm = document.querySelector("#searchTerm").value;
 
   // console.log(cartProduct)
 
-  console.log(searchTerm)
+  console.log(searchTerm);
 
   let searchedItems = cartProduct.data.filter((item) => {
     return item[1].toLowerCase().includes(searchTerm.toLowerCase());
-  })
-  
-  console.log(searchedItems)
+  });
+
+  console.log(searchedItems);
   // console.log(cartProduct)
 
   if (searchedItems.length == 0) {
-    document.querySelector("#view-products").innerHTML = "<h2>There Are No Products of that Description</h2>"
+    document.querySelector("#view-products").innerHTML =
+      "<h2>There Are No Products of that Description</h2>";
   } else {
-    renderProducts(searchedItems)
+    renderProducts(searchedItems);
   }
-
 }
 
 function sortAscending() {
@@ -123,7 +130,7 @@ function sortAscending() {
     if (a[1] > b[1]) return 1;
     if (a[1] < b[1]) return -1;
     return 0;
-  })
+  });
   renderProducts(ascendingProducts);
 }
 
@@ -132,7 +139,7 @@ function sortDescending() {
     if (a[1] > b[1]) return 1;
     if (a[1] < b[1]) return -1;
     return 0;
-  })
+  });
 
   ascendingProducts.reverse();
   renderProducts(ascendingProducts);
@@ -140,27 +147,25 @@ function sortDescending() {
 
 function sortPriceAscending() {
   let sortedProducts = products.sort((a, b) => a[3] - b[3]).reverse();
-  renderProducts(sortedProducts)
+  renderProducts(sortedProducts);
 }
 
 function sortPriceDescending() {
   let sortedProducts = products.sort((a, b) => a[3] - b[3]);
-  renderProducts(sortedProducts)
+  renderProducts(sortedProducts);
 }
 
 function clearFilter() {
-  getProducts(base_URL)
+  getProducts(base_URL);
 }
 
 function toggleCart() {
-  document.querySelector('#cart').classList.toggle('active');
+  document.querySelector("#cart").classList.toggle("active");
 }
 
 function showMask() {
-  let node = document.getElementById('cart-modal');
-  if (node.style.visibility=='visible') {
-      node.style.visibility = 'hidden';
-  }
-  else
-      node.style.visibility = 'visible'
+  let node = document.getElementById("cart");
+  if (node.style.visibility == "visible") {
+    node.style.visibility = "hidden";
+  } else node.style.visibility = "visible";
 }
